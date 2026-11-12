@@ -14,6 +14,8 @@ It only decides availability. It never creates or saves a booking.
 - `tests/ui.regression.test.tsx`: UI characterization tests U01-U13 (written before the refactor). Do not change or weaken them.
 - `src/domain/availability.test.ts` (D01-D09, F01, X01) and `src/domain/availability.regression.test.ts` (R01-R08):
   unit regression tests for the pure rule.
+- `tests/p10.input-parsing.regression.test.tsx` (P01-P04): decimal/exponent input must reach the whole-minute rule (risk R-01).
+- `RISK_REGISTER.md`: risk register. Update it (score, residual, evidence) with every risk-related change.
 
 ## Constraints (do not break)
 - AC1: reject start >= end and past requests (start <= now).
