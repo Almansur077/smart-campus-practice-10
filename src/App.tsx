@@ -47,8 +47,8 @@ export default function App() {
       setResult({ available: false, message: missing.message });
       return;
     }
-    const parsedStart = Number.parseInt(startText, 10);
-    const parsedEnd = Number.parseInt(endText, 10);
+    const parsedStart = Number(startText);
+    const parsedEnd = Number(endText);
     const start = Number.isNaN(parsedStart) ? null : parsedStart;
     const end = Number.isNaN(parsedEnd) ? null : parsedEnd;
     setResult(checkAvailability({ ...room, blocked }, start, end));
