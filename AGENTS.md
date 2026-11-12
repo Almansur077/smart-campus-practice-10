@@ -22,7 +22,11 @@ It only decides availability. It never creates or saves a booking.
 - AC4: reject overlaps; allow bookings that only touch at endpoints (half-open intervals `[start, end)`).
 - AC5: do not mutate booking data; repeated checks give the same answer.
 - AC6: keep clear desktop/mobile feedback: same messages, `role="status"` banner, same layout and Tailwind classes.
+- Exactly one fictional room (B-204). Do not add rooms or real people, schedules or room data.
 - No backend, login, database, external API or booking creation.
+- No secrets: never add, request, print or commit credentials, tokens or `.env` files.
+- No external deployments (GitHub Pages, Vercel, etc.) or publishing; local `npm run dev` / `npm run preview` only.
+- Work only on a separate branch or worktree. Never push, merge or deploy: a human reviews the diff and approves the merge.
 
 ## Engineering rules
 - Prefer pure functions and minimal changes. Change one concern at a time.
@@ -43,4 +47,6 @@ It only decides availability. It never creates or saves a booking.
 ## Verification
 - Run existing tests before and after every change, and add focused regression tests.
 - Never delete or weaken an existing assertion.
+- Before proposing acceptance, run `npm test`, `npm run typecheck` and `npm run build` and confirm all pass.
+  If any fail or were not run, say so; do not propose acceptance.
 - Report changed files, rationale and real test evidence (command, output, pass/fail count).
